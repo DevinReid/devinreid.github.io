@@ -1,5 +1,6 @@
 (function () {
   "use strict";
+  console.log("Hello World from main.js!");
 
   var isMobile = {
     any: function () {
@@ -156,7 +157,10 @@
     navigationSection();
     mobileMenuOutsideClick();
     detectDayNightMode();
+    document.getElementById("bio").innerHTML = "Hello World from main.js!";
+
   });
+
 })();
 
 var Accordion = function (el, multiple) {

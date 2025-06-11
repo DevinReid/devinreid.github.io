@@ -1,289 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta and head info for the page -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
+    <title></title> <!-- Title for the browser tab -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Portfolio webpage of Vinay Somawat" />
-    <meta
-      name="keywords"
-      content="portfolio,website,personal website,github,projects,computer science and engineering"
-    />
+    <meta name="keywords" content="portfolio,website,personal website,github,projects,computer science and engineering" />
     <meta name="author" content="Vinay Somawat" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+
+    <!-- External stylesheets and fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="icon" type="image/png" href="./logo.png" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 
+    <!-- Modernizr for older browser support -->
     <script src="js/modernizr-2.6.2.min.js"></script>
+
+    <!-- JavaScript modules -->
     <script type="module" src="index.js"></script>
     <script type="module" src="js/profile-card.js"></script>
   </head>
   <body>
+    <!-- Main container for the site -->
     <div id="colorlib-page">
       <div class="container-wrap">
-        <a
-          href="#"
-          class="js-colorlib-nav-toggle colorlib-nav-toggle"
-          data-toggle="collapse"
-          data-target="#navbar"
-          aria-expanded="false"
-          aria-controls="navbar"
-          ><i></i
-        ></a>
-        <aside
-          id="colorlib-aside"
-          role="complementary"
-          class="border js-fullheight no-print"
-        >
+
+        <!-- Hamburger menu toggle for small screens -->
+        <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+
+        <!-- Sidebar navigation -->
+        <aside id="colorlib-aside" role="complementary" class="border js-fullheight no-print">
           <div class="text-center">
+            <!-- Profile picture -->
             <div class="author-img">
               <img id="profile-img" />
             </div>
-            <h1 id="colorlib-logo"><a href="./index.html">Vinay Somawat</a></h1>
+            <!-- Site logo/name -->
+            <h1 id="colorlib-logo"><a href="./index.html">Devin Reid</a></h1>
           </div>
-          <nav
-            id="colorlib-main-menu"
-            role="navigation"
-            class="navbar"
-            style="padding-top: 2em"
-          >
+
+          <!-- Navigation menu -->
+          <nav id="colorlib-main-menu" role="navigation" class="navbar" style="padding-top: 2em">
             <div id="navbar" class="collapse">
               <ul>
+                <!-- Navigation links that scroll to page sections -->
                 <li><a href="#" data-nav-section="about">About</a></li>
                 <li><a href="#" data-nav-section="skills">Skills</a></li>
-                <li>
-                  <a href="#" data-nav-section="repos">Top Repositories</a>
-                </li>
-                <li><a href="#" data-nav-section="blogs">Blogs</a></li>
-                <li>
-                  <a href="#" data-nav-section="experience">Work Experience</a>
-                </li>
-                <li>
-                  <a href="#" data-nav-section="trekking"
-                    >Trekking Adventures</a
-                  >
-                </li>
+                <li><a href="#" data-nav-section="tarot">Tarot Card App</a></li>
+                <li><a href="#" data-nav-section="fenclaw">Fenclaw & Faund</a></li>
+                <li><a href="#" data-nav-section="repos">Top Repositories</a></li>
+                <li><a href="#" data-nav-section="powerbi">Power BI</a></li>
+                <!-- Blogs can be skipped if you don’t have it yet -->
+                <!-- <li><a href="#" data-nav-section="blogs">Blogs</a></li> -->
+                <li><a href="#" data-nav-section="testimonials">Testimonials</a></li>
+                <li><a href="#" data-nav-section="experience">Work Experience</a></li>
                 <li><a href="#" data-nav-section="education">Education</a></li>
+                <li><a href="#" data-nav-section="travels">Travels</a></li>
+                <li><a href="#" data-nav-section="media">Television & Media Appearances</a></li>
+                <li><a href="#" data-nav-section="interiors">Interior Designs</a></li>
+                <li><a href="#" data-nav-section="writing">Short Stories</a></li>
+                <li><a href="#" data-nav-section="music">Music</a></li>
                 <li><a href="#" data-nav-section="contact">Contact</a></li>
               </ul>
             </div>
           </nav>
         </aside>
+
+        <!-- Main content area -->
         <div id="colorlib-main">
+
+          <!-- About section -->
           <section class="colorlib-about" data-section="about">
             <div class="colorlib-narrow-content">
               <div class="row animate-box" data-animate-effect="fadeInLeft">
                 <div class="about-desc">
                   <h1>About</h1>
-                  <div id="bio"></div>
+                  <div id="bio">Hello World! I'm Devin Reid, and this is my portfolio.</div>
                 </div>
               </div>
             </div>
           </section>
+
+          <!-- Skills section -->
           <section class="colorlib-skills" data-section="skills">
             <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
                 <div class="about-desc">
                   <h1>Skills</h1>
                 </div>
               </div>
+              <!-- Where your skills list will go -->
               <div id="skills" class="row"></div>
             </div>
           </section>
+
+                    <!-- Tarot Card App -->
+          <section class="colorlib-skills" data-section="tarot">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Tarot Card App: <span style="color: #f9bf3f">Mama Nyah's House of Tarot</span></h1>
+                </div>
+              </div>
+              <!-- Where your skills list will go -->
+              <div id="skills" class="row"></div>
+            </div>
+          </section>
+
+          <!-- Fenclaw And Faund -->
+          <section class="colorlib-skills" data-section="fenclaw">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Fenclaw & Faund</h1>
+                </div>
+              </div>
+              <!-- Where your skills list will go -->
+              <div id="skills" class="row"></div>
+            </div>
+          </section>          
+
+          <!-- Top Repositories section -->
+          <section class="colorlib-experience no-print" data-section="repos">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <a href="https://github.com/vinaysomawat" target="_blank" style="color: inherit">
+                    <h1>Top <span style="color: #f9bf3f">Repositories</span> <i class="fa fa-external-link" aria-hidden="true" style="font-size: 30px"></i></h1>
+                  </a>
+                </div>
+              </div>
+              <!-- List of repos will be dynamically loaded here -->
+              <ul id="accordion" class="accordion animate-box" data-animate-effect="fadeInLeft">
+                <li class="open">
+                  <ul id="repos" class="" style="display: block; padding: 0px"></ul>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+                    <!-- PowerBI section -->
+          <section class="colorlib-skills" data-section="powerbi">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Data Visualization</h1>
+                </div>
+              </div>
+              <!-- Where your skills list will go -->
+              <div id="skills" class="row"></div>
+            </div>
+          </section>
+
+                   <!-- testimonials section -->
+          <section class="colorlib-skills" data-section="testimonials">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Testimonials</h1>
+                </div>
+              </div>
+              <!-- Where your skills list will go -->
+              <div id="skills" class="row"></div>
+            </div>
+          </section>
+
+          <!-- Profile card section (shows coding profiles) -->
           <section class="colorlib-profile" data-section="profile-card">
             <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
                 <div class="profile-cards">
-                  <div class="col">
-                    <div class="stack-card" user-id="8461233"></div>
-                  </div>
-                  <div class="col">
-                    <div class="github-card" username="vinaysomawat"></div>
-                  </div>
-                  <div class="col">
-                    <div class="leetcode-card" username="somawatvinay"></div>
-                  </div>
+                  <div class="col"><div class="stack-card" user-id="8461233"></div></div>
+                  <div class="col"><div class="github-card" username="vinaysomawat"></div></div>
+                  <div class="col"><div class="leetcode-card" username="somawatvinay"></div></div>
                 </div>
               </div>
             </div>
           </section>
+          
+          <!-- Work Experience section -->
           <section class="colorlib-experience" data-section="experience">
             <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box fadeInLeft animated"
-                data-animate-effect="fadeInLeft"
-              >
+              <div class="row row-bottom-padded-sm animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
                 <div class="about-desc">
                   <h1>Work <span style="color: #f9bf3f">Experience</span></h1>
                 </div>
               </div>
+              <!-- Work experience timeline -->
               <div class="timeline-centered" id="experience"></div>
             </div>
           </section>
+
+          <!-- Education section -->
           <section class="colorlib-education" data-section="education">
             <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box fadeInLeft animated"
-                data-animate-effect="fadeInLeft"
-              >
+              <div class="row row-bottom-padded-sm animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
                 <div class="about-desc">
                   <h1>Education</h1>
                 </div>
               </div>
+              <!-- Education timeline -->
               <div class="timeline-centered" id="education"></div>
             </div>
           </section>
-          <section class="colorlib-experience no-print" data-section="repos">
+
+          <!-- International Travels section -->
+          <section class="colorlib-skills" data-section="travels">
             <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
                 <div class="about-desc">
-                  <a
-                    href="https://github.com/vinaysomawat"
-                    target="_blank"
-                    style="color: inherit"
-                  >
-                    <h1>
-                      Top <span style="color: #f9bf3f">Repositories</span>
-                      <i
-                        class="fa fa-external-link"
-                        aria-hidden="true"
-                        style="font-size: 30px"
-                      ></i>
-                    </h1>
-                  </a>
-                </div>
-              </div>
-              <ul
-                id="accordion"
-                class="accordion animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <li class="open">
-                  <ul
-                    id="repos"
-                    class=""
-                    style="display: block; padding: 0px"
-                  ></ul>
-                </li>
-              </ul>
-            </div>
-          </section>
-          <section class="colorlib-blogs no-print" data-section="blogs">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <a
-                    href="https://vinaysomawat.medium.com/"
-                    target="_blank"
-                    style="color: inherit"
-                  >
-                    <h1>
-                      Latest <span style="color: #f9bf3f">Blogs</span>
-                      <i
-                        class="fa fa-external-link"
-                        aria-hidden="true"
-                        style="font-size: 30px"
-                      ></i>
-                    </h1>
-                  </a>
-                </div>
-              </div>
-              <ul
-                id="accordion"
-                class="accordion animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <li class="open">
-                  <ul
-                    id="blogs"
-                    class="submenu"
-                    style="
-                      display: flex;
-                      padding: 10px;
-                      flex-direction: column;
-                      gap: 20px;
-                    "
-                  ></ul>
-                </li>
-              </ul>
-            </div>
-          </section>
-          <section class="colorlib-skills" data-section="trekking">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>
-                    Trekking & Himalayan Pass
-                    <span style="color: #f9bf3f">Adventures</span>
-                  </h1>
-                  <p>
-                    I’m passionate about exploring the great outdoors and have
-                    completed several memorable treks across the Himalayas. Here
-                    are some of the treks I've conquered so far:
-                  </p>
+                  <h1>International Travel <span style="color: #f9bf3f">Adventures</span></h1>
+                  <p>I’m passionate about exploring the great outdoors and have completed several memorable treks across the Himalayas.</p>
+                  <!-- List of treks -->
                   <div id="trekking"></div>
-                  <p style="margin-top: 30px">
-                    In addition to trekking, I’ve explored some iconic Himalayan
-                    mountain passes on my bike, each presenting its own
-                    thrilling challenges:
-                  </p>
+                  <p style="margin-top: 30px">In addition to trekking, I’ve explored some iconic Himalayan mountain passes on my bike.</p>
+                  <!-- List of passes -->
                   <div id="passes"></div>
                 </div>
               </div>
             </div>
           </section>
+
+
+                             <!-- Television and Media Appearances section -->
+          <section class="colorlib-skills" data-section="media">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Television & Media Appearances</h1>
+                </div>
+              </div>
+              <!-- Where your skills list will go -->
+              <div id="skills" class="row"></div>
+            </div>
+          </section>
+
+          <!-- Interior Designs -->
+          <section class="colorlib-skills" data-section="interiors">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Interior Spaces</h1>
+                </div>
+              </div>
+              <!-- Where your skills list will go -->
+              <div id="skills" class="row"></div>
+            </div>
+          </section>
+
+          <!-- Short Stories -->
+          <section class="colorlib-skills" data-section="writing">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Short Stories</h1>
+                </div>
+              </div>
+              <!-- Where your skills list will go -->
+              <div id="skills" class="row"></div>
+            </div>
+          </section>
+
+          <!-- Music -->
+          <section class="colorlib-skills" data-section="music">
+            <div class="colorlib-narrow-content">
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+                <div class="about-desc">
+                  <h1>Music</h1>
+                </div>
+              </div>
+              <!-- Where your skills list will go -->
+              <div id="skills" class="row"></div>
+            </div>
+          </section>
+
+
+
+          <!-- Contact section -->
           <section class="colorlib-contact" data-section="contact">
             <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box"
-                data-animate-effect="fadeInLeft"
-              >
+              <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
                 <div class="about-desc">
                   <h1>Contact</h1>
                 </div>
-                <p>
-                  Feel free to email me at
-                  <strong>vinaysomawat40@gmail.com</strong> for tech
-                  discussions, business opportunities, or just to say hello—I’d
-                  love to hear from you!
-                </p>
+                <p>Feel free to email me at <strong>vinaysomawat40@gmail.com</strong> for tech discussions, business opportunities, or just to say hello—I’d love to hear from you!</p>
               </div>
             </div>
           </section>
+
+          <!-- Footer: visitor count and other info -->
           <section class="colorlib-footer no-print">
             <div class="colorlib-narrow-content">
               <span class="visitor-label">Total Visitors</span>
               <span id="visitorCount" class="visitor-number">Loading...</span>
             </div>
           </section>
+
+          <!-- Footer section -->
           <section class="colorlib-footer no-print" data-section="footer">
             <div class="colorlib-narrow-content">
               <footer class="footer" id="footer"></footer>
@@ -292,19 +310,18 @@
         </div>
       </div>
     </div>
+
+    <!-- JavaScript includes for interactions -->
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
 
+    <!-- Firebase visitor counter setup -->
     <script type="module">
-      // Import the functions you need from the SDKs you need
+      // Firebase config and initialization
       import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
 
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
       const firebaseConfig = {
         apiKey: "AIzaSyBM5-cQema1PzjpTPtCxIdmvTrWH2p1nc8",
         authDomain: "vinaysomawat-portfolio.firebaseapp.com",
@@ -315,44 +332,30 @@
         measurementId: "G-8PVX0MLGSK",
       };
 
-      // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
 
-      import {
-        getFirestore,
-        doc,
-        getDoc,
-        setDoc,
-        updateDoc,
-      } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
+      import { getFirestore, doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
 
-      // Initialize Firestore
       const db = getFirestore(app);
-
-      // Reference to the visitor count document
       const counterRef = doc(db, "visitors", "counter");
 
-      // Function to update visitor count
       async function updateVisitorCount() {
         try {
           const docSnap = await getDoc(counterRef);
-
           if (docSnap.exists()) {
             let newCount = docSnap.data().count + 1;
             await updateDoc(counterRef, { count: newCount });
             document.getElementById("visitorCount").innerText = newCount;
           } else {
             await setDoc(counterRef, { count: 1 });
-            document.getElementById("visitorCount").innerText =
-              "Visitor Count: 1";
+            document.getElementById("visitorCount").innerText = "Visitor Count: 1";
           }
         } catch (error) {
           console.error("Error updating visitor count:", error);
         }
       }
 
-      // Call function on page load
       updateVisitorCount();
     </script>
   </body>
