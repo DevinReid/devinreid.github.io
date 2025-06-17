@@ -161,8 +161,8 @@ export const accolades = [
       "Served as Head Chef at McMurdo Station from 2015 to 2018, supporting NASA, NSF, and international science teams."
     ],
     images: [
-      "media/accolades/IMG_0820.jpg",
-      "media/accolades/IMG_0821.jpg",
+      "media/Accolades/IMG_0820.jpg",
+      "media/Accolades/IMG_0821.jpg",
     ],
   },
 ];
