@@ -1,0 +1,139 @@
+🕷️ Behind the Scenes of the Cult of Mathilda Apprentice’s Kit
+A fantasy artifact for real-world witches, gamers, and dreamers.
+
+“Join the Cat Captain, Felix Fenclaw, and the enchantress, Fiona Faund, as they embark on a quest to find The Golden Portal, an ancient ruin lost to time.”
+
+That’s how it all begins.
+
+The Cult of Mathilda is one of the most exciting stories I’ve ever helped bring to life—part dark fantasy, part eldritch horror, and 100% pure imagination. It follows Felix, Fiona, and the ragtag Swordfish crew as they battle their way through cursed lands, sinister cults, and the deadly thugs of the Jeweler’s Guild in search of the legendary Golden Portal. But what started as a story quickly became something tangible—something magical you could hold in your hands.
+
+The Cult of Mathilda Apprentice’s Kit
+We created a full physical product experience to bring this world off the page. The Apprentice’s Kit includes:
+
+A handcrafted spellbook with original spells, ingredients, incantations, and occult-style aesthetics
+
+Roleplaying applications for each spell, making it perfect for TTRPG use
+
+A custom-designed set of metal runic dice, lovingly dubbed The Dice of Destiny
+
+A leather carrying pouch embossed with the Cult’s insignia
+
+A printed storybook, introducing you to the world, characters, and looming threat of the Spider Queen
+
+It’s more than merch. It’s a prop from a world that doesn’t exist—until you open the box.
+
+What I Did
+This was a full-spectrum creative and production project, and I wore a lot of hats—pun intended.
+
+I co-wrote the spellbook with Tess Goodwin, who brought serious magical knowledge to the table. I helped shape the structure, ensure clarity, and wrote all the roleplaying applications for each spell.
+
+I coordinated editing, layout, and print formatting, working with vendors to make sure every page looked exactly how we imagined it.
+
+I designed the custom metal dice in AutoCAD, developing all the spec sheets for production and packaging.
+
+I created the Cult of Mathilda logo—which we then used across the booklet, spellbook, pouch, and packaging.
+
+I managed production across four international vendors:
+
+Two different book printers (one for the lore zine, one for the spellbook)
+
+A metal die-casting factory
+
+A leather goods supplier for the dice pouch
+
+I also coordinated final assembly and delivery by having all items sent to the book printer for bundling. The logistics got tight, but we made it.
+
+Project Management in the Real World
+We were on a strict timeline—we had to launch this for San Diego Comic-Con, and missing the deadline wasn’t an option. So I did what any good project manager does: I adjusted.
+
+The storybook and spellbook had to be printed at the same time by two different vendors, so we spent a little more to make that happen. But earlier, I had already negotiated the dice pricing down to half the cost for a higher quantity, which gave us the breathing room in our budget to add support where we needed it. We reallocated funds, scaled production smartly, and kept scope locked down while hitting every deadline.
+
+This project is one of my proudest examples of creative production meeting real-world logistics. From concept to execution, I touched every piece—narrative, design, manufacturing, coordination, and delivery.
+
+The Cult of Mathilda Apprentice’s Kit isn’t just a product. It’s proof I can take a wild idea and make it real.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Cult of Mathilda: A Product Story</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Georgia, serif;
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 0 1em;
+      line-height: 1.7;
+      color: #222;
+    }
+    h1, h2 {
+      color: #8b0000;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin: 1em 0;
+    }
+    ul {
+      padding-left: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🕷️ Collection Highlight: The Cult of Mathilda Apprentice's Kit</h1>
+
+  <p>
+    Join the Cat Captain, Felix Fenclaw, and the enchantress, Fiona Faund, as they embark on a quest to find The Golden Portal, an ancient ruin lost to time.
+  </p>
+
+  <p>
+    <strong>Fenclaw & Faund</strong> is a fantasy fashion universe with original characters, narrative design, and physical merchandise. We blend fantasy storytelling with product design—and The Cult of Mathilda is one of our most ambitious narrative product collections.
+  </p>
+
+  <h2>The Story</h2>
+  <p>
+    The Cult of Mathilda story follows Felix, Fiona, and the Swordfish crew as they battle through shadows, spells, and sinister plots to reach the mythical Golden Portal. Along the way, they clash with the deadly Jeweler’s Guild and uncover a secret society of spider-worshippers devoted to the Interdimensional Spider Queen.
+  </p>
+
+  <h2>The Product</h2>
+  <p>
+    The Apprentice's Kit brings this fantasy to life through a spellcasting bundle designed for tabletop gamers, collectors, and occult enthusiasts alike.
+  </p>
+  <ul>
+    <li>A handcrafted spellbook filled with original incantations, ritual ingredients, and mystical illustrations—with TTRPG-ready roleplay mechanics woven into each spell.</li>
+    <li>A custom-designed set of metal runic dice, dubbed <em>The Dice of Destiny</em>, used to generate randomized spellcasting results and combos.</li>
+    <li>A leather pouch etched with cult iconography, designed to hold your dice in arcane style.</li>
+    <li>And a printed storybook introducing the lore, characters, and world of Mathilda’s cult.</li>
+  </ul>
+
+  <h2>What I Did</h2>
+  <p>
+    I co-wrote the spellbook with Tess Goodwin, a writer with deep knowledge of magical systems. I structured the content, added clarity, and wrote all the roleplaying mechanics to make each spell playable and game-friendly.
+  </p>
+  <p>
+    I designed the metal dice in AutoCAD and developed spec sheets for both the dice and all packaging elements. I also created the Cult of Mathilda logo and managed all formatting and layout for printing.
+  </p>
+  <p>
+    We worked with four international vendors:
+  </p>
+  <ul>
+    <li>Two book printers—one for the spellbook, and another for the lore booklet</li>
+    <li>A dice casting manufacturer for the runic metal dice</li>
+    <li>A leather goods supplier for the pouch</li>
+  </ul>
+  <p>
+    I coordinated final assembly by having all components shipped to one central vendor for packaging. Because our launch date (San Diego Comic-Con) was locked in, I negotiated MOQ discounts and reallocated budget to parallelize production—ensuring we met our deadline without compromising scope or quality.
+  </p>
+
+  <h2>The Result</h2>
+  <p>
+    This project is a personal favorite because it’s a perfect example of product development meeting creative direction. From concept to delivery, I wore every hat—project manager, purchasing lead, writer, designer, and operations coordinator.
+  </p>
+  <p>
+    The Cult of Mathilda collection represents what I do best: blending storytelling with physical product execution, and leading creative ideas through the full pipeline to final form.
+  </p>
+
+</body>
+</html>

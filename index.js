@@ -3,15 +3,27 @@ import {
   skills,
   education,
   experience,
-  trekking,
-  passes,
   footer,
+  featuredProjects,
+  dataSections,
+  testimonials,
+  accolades,
+  travels,
+  mediaAppearances,
+  interiors,
+  shortStories,
+  music,
 } from "./user-data/data.js";
 import { html, render } from "https://unpkg.com/lit-html?module";
+import { unsafeHTML } from "https://unpkg.com/lit-html/directives/unsafe-html.js?module";
 
 import { URLs } from "./user-data/urls.js";
 
 const { medium, gitConnected, gitRepo } = URLs;
+
+console.log("✅ index.js is running");
+
+
 
 async function fetchBlogsFromMedium(url) {
   try {
@@ -30,11 +42,13 @@ async function fetchReposFromGit(url) {
   try {
     const response = await fetch(url);
     const items = await response.json();
+    console.log("Fetched repos:", items);  // ✅ Add this line
     populateRepo(items, "repos");
   } catch (error) {
-    throw new Error(`Error in fetching the blogs from repos: ${error}`);
+    console.error(`Error in fetching the blogs from repos: ${error}`);
   }
 }
+
 
 async function fetchGitConnectedData(url) {
   try {
@@ -75,54 +89,219 @@ function mapBasicResponse(basics) {
 
 function populateBio(items, id) {
   const bioTag = document.getElementById(id);
-  const bioTemplate = html` ${items.map((bioItem) => html`<p>${bioItem}</p>`)}`;
+  const bioTemplate = html` ${items.map((bioItem) => html`<p>${unsafeHTML(bioItem)}</p>`)}`;
   render(bioTemplate, bioTag);
 }
 
-function populateSkills(items, id) {
-  const skillsTag = document.getElementById(id);
 
-  const skillsTemplate = html` ${items.map(
-    (item) => html` <div class="col-md-12 animate-box">
-      <div class="progress-wrap">
-        <li class="skill-item">${item}</li>
+function populateFeaturedProjects(projects) {
+  projects.forEach((project) => {
+    const container = document.querySelector(`section[data-section='${project.id}'] .colorlib-narrow-content`);
+    if (!container) return;
+
+    const template = html`
+      <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+      <div class="about-desc">
+      <h1>${unsafeHTML(project.title)}</h1>
       </div>
-    </div>`
-  )}`;
+        <!-- Banner in a product-bubble -->
+          <div class="product-bubble banner-bubble animate-box" data-animate-effect="fadeInLeft">
+            <img src="${project.banner}" alt="${project.title} Banner" style="width: 100%; border-radius: 5px;" />
+          </div>
+        </div>
+        <div class="about-desc">
+          ${project.description.map(p => html`<p>${unsafeHTML(p)}</p>`)}
+          <div style="text-align: center; margin-top: 15px; margin-bottom: 15px">
+            <a href="${project.github}" target="_blank" class="project-link1">View on GitHub</a> |
+            <a href="${project.steam}" target="_blank" class="project-link2">Buy on Steam</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video + Screenshots in a product-bubble -->
+      <div class="product-bubble animate-box" data-animate-effect="fadeInLeft">
+        <div class="row" style="margin-bottom: 20px;">
+          <div class="col-xxs-12">
+            <iframe width="100%" height="480" src="${project.video}" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="row" style="display: flex; flex-wrap: wrap; gap: 10px;">
+          ${project.screenshots.map(img => html`
+            <a href="${img}" data-lightbox="${project.id}-gallery" style="flex: 1 1 calc(20% - 10px);">
+              <img src="${img}" alt="Screenshot" style="width: 100%; border-radius: 5px;" />
+            </a>
+          `)}
+        </div>
+      </div>
+    `;
+
+    render(template, container);
+  });
+}
+
+
+function populatePowerBI(sectionData) {
+  const container = document.querySelector(`section[data-section='${sectionData.id}'] .colorlib-narrow-content`);
+  if (!container) return;
+
+  const template = html`
+    <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+      <div class="about-desc">
+        <h1>${unsafeHTML(sectionData.title)}</h1>
+        ${sectionData.description.map(p => html`<p>${unsafeHTML(p)}</p>`)}
+      </div>
+    </div>
+  <div class="product-bubble animate-box" data-animate-effect="fadeInLeft">
+    <div class="swiper-container powerbi-swiper">
+      <div class="swiper-wrapper">
+        ${sectionData.screenshots.map((src, index) => html`
+          <div class="swiper-slide">
+            <a href="${src}" data-lightbox="powerbi-gallery" data-title="Slide ${index + 1}">
+              <img src="${src}" style="width: 100%; border-radius: 5px;" />
+            </a>
+          </div>
+        `)}
+      </div>
+    </div>
+    </div>
+  `;
+
+  render(template, container);
+
+  // Defer Swiper init to next tick
+  setTimeout(() => {
+    const slider = container.querySelector('.powerbi-swiper');
+    if (slider) {
+      new Swiper(slider, {
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: slider.querySelector('.swiper-button-next'),
+          prevEl: slider.querySelector('.swiper-button-prev'),
+        },
+      });
+    }
+  }, 0);
+}
+
+function populateTestimonials(items) {
+  const container = document.querySelector("section[data-section='testimonials'] .colorlib-narrow-content");
+  if (!container || !items?.length) return;
+
+  const template = html`
+    ${items.map((t) => html`
+      <div class="product-bubble animate-box" data-animate-effect="fadeInLeft">
+        <div class="row" style="display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 40px; align-items: center; flex-direction: ${t.flip ? 'row-reverse' : 'row'};">
+          <div style="flex: 1; min-width: 300px; text-align: center;">
+            <img src="${t.image}" alt="${t.name}" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 10px;" />
+            <h4 style="margin-bottom: 5px;">${t.name}</h4>
+            <p style="margin-bottom: 5px; font-style: italic;">${t.company}</p>
+            <a href="${t.linkedin}" target="_blank" class="project-link">LinkedIn Profile</a>
+          </div>
+          <div style="flex: 2; min-width: 300px;">
+            <p style="font-size: 1.1em; line-height: 1.6;">“${t.testimonial}”</p>
+          </div>
+        </div>
+      </div>
+    `)}
+  `;
+  render(template, container);
+}
+
+function populateAccolades(items) {
+  const container = document.querySelector(`section[data-section='accolades'] .colorlib-narrow-content`);
+  if (!container || !items?.length) return;
+
+  const template = html`
+    ${items.map((item, i) => html`
+      <div class="product-bubble animate-box" data-animate-effect="fadeInLeft">
+        <div class="row" style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
+          ${i % 2 === 1 ? null : html`
+            <div style="flex: 1; min-width: 300px;">
+              <div class="swiper-container slider-accolade-${i}">
+                <div class="swiper-wrapper">
+                  ${item.images.map(src => html`
+                    <div class="swiper-slide">
+                      <a href="${src}" data-lightbox="accolade-${i}">
+                        <img src="${src}" style="width: 100%; border-radius: 8px;" />
+                      </a>
+                    </div>
+                  `)}
+                </div>
+              </div>
+            </div>
+          `}
+          <div style="flex: 1; min-width: 300px;">
+            <h3><strong>${item.title}</strong></h3>
+            <p><strong>${item.subtitle}</strong> • ${item.date}</p>
+            ${item.description.map(line => html`<p>${line}</p>`)}
+          </div>
+          ${i % 2 === 1 ? html`
+            <div style="flex: 1; min-width: 300px;">
+              <div class="swiper-container slider-accolade-${i}">
+                <div class="swiper-wrapper">
+                  ${item.images.map(src => html`
+                    <div class="swiper-slide">
+                      <a href="${src}" data-lightbox="accolade-${i}">
+                        <img src="${src}" style="width: 100%; border-radius: 8px;" />
+                      </a>
+                    </div>
+                  `)}
+                </div>
+              </div>
+            </div>
+          ` : null}
+        </div>
+      </div>
+    `)}
+  `;
+  render(template, container);
+
+  // Initialize Swipers
+  items.forEach((_, i) => {
+    const container = document.querySelector(`.slider-accolade-${i}`);
+    if (container) {
+      new Swiper(container, {
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+      });
+    }
+  });
+}
+
+function populateSkills(skillSections, id) {
+  const skillsTag = document.getElementById(id);
+  if (!skillsTag || !skillSections?.length) return;
+
+  const skillsTemplate = html`
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      ${[0, 1].map(
+        (colIndex) => html`
+          <div style="flex: 1 1 45%;">
+            ${skillSections
+              .filter((_, i) => i % 2 === colIndex)
+              .map(
+                (section) => html`
+                  <h4>${section.category}</h4>
+                  <ul class="skills-list">
+                    ${section.items.map(
+                      (item) => html`<li>${unsafeHTML(item)}</li>`
+                    )}
+                  </ul>
+                `
+              )}
+          </div>
+        `
+      )}
+    </div>
+  `;
   render(skillsTemplate, skillsTag);
-}
-
-function populateTrekking(items) {
-  const trektag = document.getElementById("trekking");
-
-  const trekkingTemplate = html`
-    ${items.map(
-      (item) => html`
-        <div class="trek-card animate-box">
-          <li class="trek-title">
-            <strong>${item.name},</strong> ${item.state} - ${item.height}
-          </li>
-        </div>
-      `
-    )}
-  `;
-  render(trekkingTemplate, trektag);
-}
-
-function populatePasses(items) {
-  const trekTag = document.getElementById("passes");
-  const passesTemplate = html`
-    ${items.map(
-      (item) => html`
-        <div class="trek-card animate-box">
-          <li class="trek-title">
-            <strong>${item.name},</strong> ${item.state} - ${item.height}
-          </li>
-        </div>
-      `
-    )}
-  `;
-  render(passesTemplate, trekTag);
 }
 
 function populateBlogs(items, id) {
@@ -260,6 +439,262 @@ function populateExp_Edu(items, id) {
 
   render(timelineTemplate, mainContainer);
 }
+function populateTravel(travels) {
+  const container = document.querySelector(`section[data-section='travel'] .colorlib-narrow-content`);
+  if (!container || !travels?.length) return;
+
+  const template = html`
+    ${travels.map((item, i) => html`
+      <div class="product-bubble">
+        <div class="row" style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap;">
+          ${item.images?.length && i % 2 === 0 ? html`
+            <div style="flex: 1; min-width: 300px;">
+              <div class="swiper-container slider-travel-${i}">
+                <div class="swiper-wrapper">
+                  ${item.images.map(src => html`
+                    <div class="swiper-slide">
+                      <a href="${src}" data-lightbox="travel-${i}">
+                        <img src="${src}" style="width: 100%; border-radius: 8px;" />
+                      </a>
+                    </div>
+                  `)}
+                </div>
+              </div>
+            </div>
+          ` : null}
+          <div style="flex: 1; min-width: 300px;">
+            <h3><strong>${item.title}</strong></h3>
+            <p><strong>${item.subtitle}</strong> ${item.date ? `• ${item.date}` : ''}</p>
+            ${item.description.map(line => html`<p>${line}</p>`)}
+            ${item.tags?.length ? html`
+              <p>
+                ${item.tags.map(tag => html`<span class="tag-chip">${tag}</span>`)}
+              </p>
+            ` : null}
+          </div>
+          ${item.images?.length && i % 2 === 1 ? html`
+            <div style="flex: 1; min-width: 300px;">
+              <div class="swiper-container slider-travel-${i}">
+                <div class="swiper-wrapper">
+                  ${item.images.map(src => html`
+                    <div class="swiper-slide">
+                      <a href="${src}" data-lightbox="travel-${i}">
+                        <img src="${src}" style="width: 100%; border-radius: 8px;" />
+                      </a>
+                    </div>
+                  `)}
+                </div>
+              </div>
+            </div>
+          ` : null}
+        </div>
+      </div>
+    `)}
+  `;
+  render(template, container);
+
+  travels.forEach((_, i) => {
+    const swiperEl = document.querySelector(`.slider-travel-${i}`);
+    if (swiperEl) {
+      new Swiper(swiperEl, {
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+      });
+    }
+  });
+}
+
+function populateMediaAppearances(items) {
+  const container = document.getElementById("mediaAppearances");
+  if (!container || !items?.length) return;
+
+  const template = html`
+    ${items.map(item => html`
+    
+      <div class="profile-card" style="flex: 1 1 45%;">
+        <div class="profile-header">
+          <img class="profile-avatar-logos" src="${item.thumbnail}" alt="${item.title}" />
+          <div class="profile-info">
+            <h3 class="profile-name">${item.title}</h3>
+            <p class="profile-username">${item.platform}</p>
+          </div>
+        </div>
+        <div class="blog-description">
+          ${item.description.map(line => html`<p>${line}</p>`)}
+                    ${item.fullEpisodeLink ? html`
+            <p style="margin-top: 10px;">
+              <a href="${item.fullEpisodeLink}" target="_blank" class="project-link">
+                 View Full Episode
+              </a>
+            </p>
+          ` : null}
+
+            ${item.mediaType === "video" ? html`
+              ${item.embed ? html`
+                <iframe 
+                  width="100%" 
+                  height="315" 
+                  src="${item.embed}" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  style="border-radius: 8px;">
+                </iframe>
+              ` : html`
+                <video controls style="width: 100%; border-radius: 8px;">
+                  <source src="${item.mediaSrc}" type="video/mp4" />
+                  Your browser does not support the video element.
+                </video>
+              `}
+            ` : html`
+              <audio controls style="width: 100%; margin-top: 10px;">
+                <source src="${item.mediaSrc}" type="audio/mpeg" />
+                Your browser does not support the audio element.
+              </audio>
+            `}
+
+
+        </div>
+      </div>
+    `)}
+  `;
+  render(template, container);
+}
+
+
+function populateInteriors(data) {
+  const container = document.querySelector(`section[data-section='interiors'] .colorlib-narrow-content`);
+  if (!container) return;
+
+  const template = html`
+    <!-- Title (outside the product-bubble) -->
+    <div class="row row-bottom-padded-sm animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
+      <div class="about-desc">
+        <h1>${unsafeHTML(data.title)}</h1>
+      </div>
+    </div>
+
+    <!-- Content bubble -->
+    <div class="product-bubble">
+      <div class="row animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
+        <div class="about-desc">
+          ${data.description.map(p => html`<p>${p}</p>`)}
+        </div>
+      </div>
+
+      <div style="margin-top: 30px;">
+        <div class="swiper-container slider-interiors">
+          <div class="swiper-wrapper">
+            ${data.images.map(img => html`
+              <div class="swiper-slide">
+                <a href="${img}" data-lightbox="interiors">
+                  <img src="${img}" alt="Interior Design Example" class="carousel-image" />
+                </a>
+              </div>
+            `)}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  render(template, container);
+
+
+
+  new Swiper('.slider-interiors', {
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 5,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+}
+
+function populateShortStories(stories) {
+  const container = document.querySelector(`section[data-section='stories'] .colorlib-narrow-content`);
+  if (!container || !stories?.length) return;
+
+const template = html`
+  <!-- Title with no delay -->
+  <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+    <div class="about-desc">
+      <h1>Short Stories</h1>
+      <p>Here are links to my published short stories. I'm working on digital downloads, so check back for updates.</p>
+    </div>
+  </div>
+
+  <!-- Story Cards -->
+  <div class="row" style="display: flex; gap: 30px; flex-wrap: wrap;">
+    ${stories.map((story, i) => html`
+      <div class="profile-card animate-box delay-${i + 1}" data-animate-effect="fadeInLeft" style="flex: 1 1 30%;">
+        <a href="${story.link}" target="_blank">
+          <img src="${story.thumbnail}" alt="${story.title}" style="width: 100%; border-radius: 12px; margin-bottom: 15px;" />
+        </a>
+        <h3 style="margin-bottom: 10px;">${story.title}</h3>
+        ${story.description.map(line => html`<p>${line}</p>`)}
+        <a href="${story.link}" target="_blank" class="project-link">Read Story</a>
+      </div>
+    `)}
+  </div>
+`;
+
+
+  render(template, container);
+}
+
+function populateMusic(data) {
+  const container = document.querySelector(`section[data-section='pirate-shanty'] .colorlib-narrow-content`);
+  if (!container) return;
+
+  const template = html`
+    <div class="product-bubble animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
+      <div class="row" style="display: flex; gap: 30px; flex-wrap: wrap; align-items: center;">
+        
+        <div style="flex: 1 1 300px;">
+          <audio controls style="width: 100%; margin-bottom: 20px;">
+            <source src="${data.mp3}" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+          <iframe style="border-radius:12px; width: 100%; height: 352px;" 
+            src="${data.spotifyEmbed}" 
+            frameborder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+          </iframe>
+        </div>
+
+        <div style="flex: 1 1 300px;">
+          <h4>${data.title}</h4>
+          ${data.description.map(p => html`<p>${p}</p>`)}
+          <p style="margin-top: 10px;">
+            <a href="${data.producerLink}" target="_blank" class="project-link">Mixed and Mastered by Velvet Honey</a>
+          </p>
+          <p style="margin-top: 10px;">
+            <a href="${data.hatLink}" target="_blank" class="project-link">Buy the Pirate Hat</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  `;
+
+  render(template, container);
+}
+
+
+
+
 
 function populateLinks(items, id) {
   const footer = document.getElementById(id);
@@ -345,17 +780,67 @@ function getBlogDate(publishDate) {
   }
 }
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('darkModeToggle');
+
+  // Load saved mode from localStorage
+  const savedMode = localStorage.getItem('darkMode');
+  if (savedMode === 'enabled') {
+    document.body.classList.add('dark-mode');
+  }
+
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    
+    // Save mode preference
+    if (document.body.classList.contains('dark-mode')) {
+      localStorage.setItem('darkMode', 'enabled');
+    } else {
+      localStorage.setItem('darkMode', 'disabled');
+    }
+  });
+});
+
+
+const lottie = document.getElementById("aboutLottie");
+
+if (lottie) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        lottie.play();
+      } else {
+        lottie.stop();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(lottie);
+}
+
+
+
+
 populateBio(bio, "bio");
 
 populateSkills(skills, "skills");
-
-fetchBlogsFromMedium(medium);
+populateFeaturedProjects(featuredProjects)
 fetchReposFromGit(gitRepo);
-fetchGitConnectedData(gitConnected);
-
+populatePowerBI(dataSections.powerbi);
+populateTestimonials(testimonials);
 populateExp_Edu(experience, "experience");
-populateTrekking(trekking);
-populatePasses(passes);
 populateExp_Edu(education, "education");
+populateTravel(travels);
+populateMediaAppearances(mediaAppearances);
+populateAccolades(accolades);
+populateInteriors(interiors);
+populateShortStories(shortStories);
+populateMusic(music);
+// fetchBlogsFromMedium(medium);
+// fetchGitConnectedData(gitConnected);
+
+
+
 
 populateLinks(footer, "footer");

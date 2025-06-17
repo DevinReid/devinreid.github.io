@@ -157,7 +157,7 @@
     navigationSection();
     mobileMenuOutsideClick();
     detectDayNightMode();
-    document.getElementById("bio").innerHTML = "Hello World from main.js!";
+   
 
   });
 

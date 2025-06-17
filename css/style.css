@@ -1,18 +1,25 @@
 * {
   box-sizing: border-box;
 }
-
-.dark-mode {
-  background-color: black;
+/* rgb(5, 44, 33) */
+.dark-mode{
+  background-color: rgb(19, 74, 80)!important;
   color: white;
+}
+
+body {
+  background-color: rgb(164, 255, 222);
 }
 
 body {
   font-family: "Montserrat", sans-serif !important;
   font-weight: 400;
+    background-color: rgb(164, 255, 222)!important;
   font-size: 15px;
   line-height: 1.8 !important;
   color: black;
+
+
 }
 @media screen and (max-width: 992px) {
   body {
@@ -49,7 +56,7 @@ x {
 h1,
 h5,
 h6 {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Playfair Display", Georgia, serif ;
   font-weight: 500;
   margin: 0 0 30px 0;
 }
@@ -62,13 +69,14 @@ h2 {
 h3 {
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 500;
-  margin: 0 0 30px 0;
+  margin: 0 0 40px 0;
 }
 h4 {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
   font-size: 15px;
   margin: 0 0 30px 0;
+  color:#8005ad !important;
 }
 
 figure {
@@ -104,7 +112,15 @@ figure figcaption {
   width: 100%;
   overflow: hidden;
   position: relative;
+  background-color: inherit;
+  
 }
+
+.dark-mode #colorlib-aside {
+  background: linear-gradient(135deg, #3ff9c4, #2ef08f);
+  color: white;
+}
+
 
 #colorlib-aside {
   padding-top: 3em;
@@ -113,11 +129,11 @@ figure figcaption {
   width: 300px;
   position: fixed;
   z-index: 1001;
-  background: linear-gradient(135deg, rgb(255, 221, 153), rgb(249, 191, 63));
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
   left: 60px;
+  background: linear-gradient(135deg, #3ff9c4, #2ef08f);
 }
 @media screen and (max-width: 768px) {
   #colorlib-aside {
@@ -135,8 +151,8 @@ figure figcaption {
 }
 
 #colorlib-aside .author-img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   margin: 0 auto;
   margin-bottom: 20px;
   -webkit-border-radius: 50%;
@@ -312,6 +328,7 @@ figure figcaption {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+
 }
 @media screen and (max-width: 768px) {
   #colorlib-main {
@@ -462,7 +479,7 @@ body.offcanvas .colorlib-nav-toggle {
   position: absolute;
   display: block;
   width: 4px;
-  background: #f9bf3f;
+  background:  #8005ad;
   top: 20px;
   bottom: 20px;
   margin-left: 29px;
@@ -501,7 +518,7 @@ body.offcanvas .colorlib-nav-toggle {
   .timeline-entry
   .timeline-entry-inner
   .timeline-icon.color-2 {
-  background: brown;
+  background: #8005ad;
   color: white;
 }
 .timeline-centered
@@ -516,7 +533,7 @@ body.offcanvas .colorlib-nav-toggle {
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
   position: relative;
-  background: linear-gradient(135deg, rgb(255, 221, 153), rgb(249, 191, 63));
+  background: linear-gradient(135deg, #3ff9c4, #2ef08f);
   color: #000;
   padding: 1.2em;
   margin-left: 60px;
@@ -597,11 +614,11 @@ body.offcanvas .colorlib-nav-toggle {
 .progress-wrap h3 {
   font-size: 16px;
   font-family: "Quicksand", Arial, sans-serif;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .progress-wrap h3 {
-  padding-bottom: 2px;
+  padding-bottom: 5px;
 }
 
 @media screen and (max-width: 768px) {
@@ -849,7 +866,7 @@ ul {
 }
 
 span {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
   /* color: black; */
   display: inline-block; /* change the display type           */
   margin: 0 5px;
@@ -864,6 +881,7 @@ span {
   #colorlib-main {
     float: left;
     width: 100%;
+
   }
 
   .timeline-label {
@@ -875,11 +893,35 @@ span {
 }
 
 :root {
-  --footer-bg: linear-gradient(135deg, rgb(255, 221, 153), rgb(249, 191, 63));
+  --footer-bg: linear-gradient(135deg, #3ff9c4, #2ef08f);
   --color: #000;
   --color-smooth: #000;
   --input-border: #3a456a;
 }
+
+.product-bubble.banner-bubble {
+  max-width: 70%; /* or try max-width: 600px */
+  margin: 0 auto;
+  padding: 20px 20px;
+  text-align: center;
+
+  /* optional: add this if your .product-bubble has background/border */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+   margin-bottom: 30px;
+}
+
+
+
+
+.product-bubble.banner-bubble img {
+  max-width: 100%;
+  height: auto;
+}
+
+
 
 footer {
   font-size: 13px;
@@ -932,8 +974,8 @@ footer ul {
 }
 
 .brown-badge {
-  background-color: brown;
-  border: 1px solid #850101;
+  background-color: #8005ad;
+  border: 1px solid #ffffff;
   color: #fff;
 }
 
@@ -943,6 +985,7 @@ hr {
   border: 0;
   border-top: 1px solid #000 !important;
 }
+
 
 .repo-card {
   border-radius: 5px;
@@ -985,14 +1028,76 @@ hr {
 }
 
 strong {
-  color: #000;
+  color: #8005ad;
+  text-shadow: 0 0 20px whitesmoke;
+}
+
+.strong2 {
+  font-weight: bold;
+  color: inherit; /* keeps the text color consistent with the surrounding text */
+  display:inline;
+}
+
+.dark-mode .strong2 {
+  color: rgb(0, 0, 0) !important; /* or any color that fits the context */
+  font-weight: bold;
+  
 }
 
 .dark-mode {
   strong {
-    color: #f9bf3f;
+    color: #01ff77;
+    text-shadow: 0 0 5px 
+    #828282;
   }
 }
+
+a.project-link1 {
+  color: #8005ad; /* deep red */
+  text-decoration: underline !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a.project-link1:hover {
+  text-decoration: underline;
+}
+
+a.project-link2 {
+  color: #bc03ff; /* rich blue */
+  text-decoration: underline!important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a.project-link2:hover {
+  text-decoration: underline;
+}
+
+
+
+.dark-mode a.project-link1 {
+  color: #01ff77 !important; /* or another color that works in dark mode */
+}
+
+.dark-mode a.project-link2{
+  color: #01fffb !important; /* or another color that works in dark mode */
+}
+
+
+.highlight-green {
+  Color:  #8005ad;
+  text-shadow: 0 0 20px whitesmoke;
+}
+  /* color: #01ff77;
+  text-shadow: 0 0 5px #4ee2c7; */
+.dark-mode .highlight-green {
+  color: #bb00ff
+  ;
+  text-shadow: 0 0 10px #020202;
+}
+
+
 
 .blog-card {
   display: flex;
@@ -1073,7 +1178,7 @@ strong {
   gap: 16px;
   margin-top: 12px;
   font-size: 12px;
-  color: #666;
+  color: #8005ad;
 }
 
 .language-div {
@@ -1117,12 +1222,20 @@ strong {
   text-decoration: none;
   color: black;
   display: block;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 12px;
   font-size: 14px;
-  background: linear-gradient(135deg, #ffdd99, #f9bf3f);
+  background: linear-gradient(135deg, #3ff9c4, #2ef08f);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  max-width: 300px;
 }
 
 .profile-header {
@@ -1135,6 +1248,12 @@ strong {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+.profile-avatar-logos {
+  width: 40px;
+  height: 40px;
+
 }
 
 .profile-info {
@@ -1225,4 +1344,161 @@ strong {
   display: flex;
   gap: 5px;
   flex-wrap: wrap;
+}
+
+.skills-list {
+  list-style-type: disc;   /* Solid bullet points */
+  padding-left: 50px;      /* Indent for bullet points */
+  margin: 0 0 1em 0;       /* Optional: space below the list */
+}
+
+.skills-list li {
+  margin-bottom: 0.1em;    /* Optional: spacing between bullet points */
+}
+
+
+.swiper-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+}
+
+
+.product-bubble {
+  background: linear-gradient(135deg, #3ff9c4, #2ef08f); /* soft yellow bubble look */
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.dark-mode .product-bubble h4{
+  color: #8005ad !important;
+}
+.product-bubble:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+ /* background: #222222 */
+ /* #335d51; */
+.dark-mode .product-bubble, .repo-card {
+  background: linear-gradient(135deg, #3ff9c4, #2ef08f);
+  color: rgb(0, 0, 0);
+}
+.dark-mode .profile-card a.project-link,
+.dark-mode .product-bubble a.project-link {
+  color: #8005ad !important;
+  font-weight: 700;
+  text-shadow: 0 0 5px #f5f4f4;
+}
+.profile-card a.project-link,
+.product-bubble a.project-link {
+  color: #8005ad !important;
+  font-weight: 700;
+  text-shadow: 0 0 5px #f5f4f4;
+}
+
+.dark-mode .product-bubble, .repo-card{
+  strong {
+    color: #fefefe;
+    font-weight: 1200;
+      text-shadow: 0 0 5px #050505;
+      
+  }}
+.dark-mode .product-bubble p,li{
+  color:black !important;
+  font-weight:700;
+ 
+}
+
+
+
+.dark-mode h4{
+  color:#01ff77!important;
+  text-shadow: 0 0 5px #ffffff;
+}
+
+.dark-mode li{
+  color:white!important;
+}
+
+.dark-mode p{
+  font-weight: 500;
+}
+.dark-mode .profile-card h3,
+.dark-mode .product-bubble h3{
+  font-size:180%;
+  color: #8005ad;
+}
+
+.dark-mode .product-bubble li,
+.dark-mode .product-bubble h3,
+.dark-mode .product-bubble a {
+  color: black !important;
+}
+
+.dark-mode .product-bubble strong,
+.dark-mode .product-bubble .repo-heading,
+.dark-mode .repo-card strong,
+.dark-mode .repo-card .repo-heading {
+  color: #8005ad;
+  font-weight: 700;
+  text-shadow: 0 0 5px #f5f4f4;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+
+
+.about-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-flex #bio {
+  flex: 1;
+  min-width: 250px;
+}
+
+.about-flex dotlottie-player {
+  flex: 0 0 300px;
+}
+
+.pallete{
+color: #8005ad;    /* → deep purple (used in links, headings, highlights, strong text) */
+color: #bb00ff;    /* → bright purple (dark mode .highlight-green override) */
+color: #3ff9c4;    /* → teal green (main highlight, gradients, dark mode accents) */
+color: #2ef08f;    /* → neon green (gradient secondary, sidebar accents) */
+color: #01ff77;    /* → electric green (dark mode project-link1, strong text) */
+color: #01fffb;    /* → neon cyan (dark mode project-link2) */
+color: #ffdd99;    /* → soft yellow-orange (repo cards, blog cards) */
+color: #f9bf3f;    /* → bright orange-yellow (fallback sidebar bg, accent) */
+color: #8b0000;    /* → dark red (project-link1 default) */
+color: #004c99;    /* → strong blue (project-link2 default) */
+color: #000000;    /* → black (text, borders, nav, icons) */
+color: #ffffff;    /* → white (borders, contrast text, light mode base) */
+color: #828282;    /* → soft gray (text shadows in dark mode) */
+color: #b3b3b3;    /* → medium gray (figcaption text) */
+color: #333333;    /* → dark gray (footer text, copyright) */
+color: #666666;    /* → medium-dark gray (text, stat labels) */
+color: #d9d9d9;    /* → light gray (submenu text) */
+color: #e0e0e0;    /* → pale gray (hr lines, soft borders) */
+
+color: rgb(164, 255, 222);  /* → mint green (light mode background) */
+color: rgb(19, 74, 80);     /* → dark teal (dark mode background) */
 }
