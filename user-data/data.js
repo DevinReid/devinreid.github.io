@@ -330,7 +330,7 @@ export const travels = [
   subtitle: "Still on the List",
   date: "",
   description: [
-    "I don't believe that the world is too big for one lifetime, but connecting with every soul on this surely earth is. I know that seems crazy, but maybe I'll try my best. Here are the places calling to me most right now:"
+    "I don't believe that the world is too big for one lifetime, but connecting with every soul on this earth surely is. I know that seems crazy, connecting with billions, but I'll try my best. Here are the places calling to me most right now:"
   ],
   images: [],
   tags: ["Japan", "Turkey", "More of Vietnam", "More of Germany", "The Caribbean Islands"]
